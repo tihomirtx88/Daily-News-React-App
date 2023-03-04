@@ -29,7 +29,7 @@ const HomePosts = () => {
           {homePosts.articles 
             ? homePosts.articles.items.map((item) => (
                 <div key={item.id}>
-                    <img style={{width: '100%', height: '200px'}} src={`${item.image}?${item.id}`} alt="some pic" />
+                    <img style={{width: '100%', height: '200px', objectFit: 'cover'}} src={`${item.image}?${item.id}`} alt="some pic" />
                     <div className="author">
                         <span>{item.author} -</span>
                         <Moment format='DD MMMM'>{item.createAt}</Moment>

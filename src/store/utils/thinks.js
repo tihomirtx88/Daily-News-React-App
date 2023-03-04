@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios';
+import { async } from 'q';
 const URL_SERV = "http://localhost:3001";
 
 
@@ -22,3 +23,16 @@ export const fetchPosts = createAsyncThunk(
         }
     }
 )
+
+export const fetchPost = createAsyncThunk(
+    'post/fetchPost',
+    async(id) => {
+      try {
+        const response = await axios.get(`${URL_SERV}/posts/${id}`);;
+        return response.data;
+        
+      } catch (err) {
+           throw err;
+      }
+    }
+);

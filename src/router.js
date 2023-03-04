@@ -13,7 +13,7 @@ function Router() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="posts/:id" element={<Posts />} />
+          <Route path="article/:id" element={<Posts />} />
         </Routes>
       </MainLayouts>
     </BrowserRouter>
