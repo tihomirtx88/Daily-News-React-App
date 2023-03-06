@@ -4,6 +4,8 @@ import Moment from "react-moment";
 import { useEffect } from "react";
 import { fetchPost } from "../../store/utils/thinks";
 import { Spinner } from 'react-bootstrap';
+import { clearPostById } from '../../store/reducers/postsReducer';
+import NewLetter from '../utils/newsletter';
 
 const Posts = () => {
   const posts = useSelector((state) => state.posts);
@@ -13,6 +15,12 @@ const Posts = () => {
   useEffect(() => {
     dispatch(fetchPost(params.id));
   }, []);
+
+  useEffect(() => {
+     return() => {
+       dispatch(clearPostById())
+     }
+  },[]);
 
   return (
     <>
@@ -38,6 +46,7 @@ const Posts = () => {
           </Spinner>
         </div>
       ) : null}
+      <NewLetter/>
     </>
   );
 };

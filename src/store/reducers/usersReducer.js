@@ -7,7 +7,9 @@ export const usersSlice = createSlice({
        action:{}
    },
    reducers:{
-
+       clearNewsLetter:(state,action)=>{
+          state.action ={}
+       }
    },
    extraReducers:(builder)=>{
        builder
@@ -17,4 +19,5 @@ export const usersSlice = createSlice({
    }
  });
  
+ export const { clearNewsLetter } = usersSlice.actions;
  export default usersSlice.reducer;

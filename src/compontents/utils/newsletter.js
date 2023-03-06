@@ -1,7 +1,8 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { addToNewsletter } from '../../store/utils/thinks';
+import { clearNewsLetter } from '../../store/reducers/usersReducer';
 import { showToast } from './tools';
 
 const Newsletter = () => {
@@ -23,8 +24,10 @@ const Newsletter = () => {
                 showToast('ERROR','You are already on the the DB')
                 textInput.current.value = '';
             }
+            dispatch(clearNewsLetter());
         })
     }
+
     return(
         <div className="newsletter_container">
            <h1>Join our newsletter</h1>
