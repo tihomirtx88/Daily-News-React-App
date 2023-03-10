@@ -65,3 +65,19 @@ export const addToNewsletter = createAsyncThunk(
         }
     }
 )
+
+export const SendMessage = createAsyncThunk(
+    'users/SendMessage',
+    async(data) => {
+        try {
+            await axios({
+                method: 'POST',
+                url: `${URL_SERV}/contact`,
+                data: data
+            });
+            return true;
+        } catch (err) {
+            throw err
+        }
+    }
+);

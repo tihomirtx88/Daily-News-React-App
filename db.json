@@ -211,5 +211,14 @@
       "id": 2
     }
   ],
-  "contact": []
+  "contact": [
+    {
+      "email": "asen@abv.bg",
+      "firstName": "asen",
+      "lastName": "asen",
+      "messsage": "",
+      "message": "dsaDSAdsadSAdsadas",
+      "id": 1
+    }
+  ]
 }
